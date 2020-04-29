@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
 
         features ="src/test/resources/features" ,
         glue = "com/zerobank/stepdefnitions",
-        dryRun = true,
+        dryRun = false,
         strict = true,
         tags = "",
         plugin = {

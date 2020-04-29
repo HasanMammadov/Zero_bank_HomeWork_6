@@ -25,10 +25,7 @@ public class LoginStepDef {
         loginPage.login();
     }
 
-    @Then("{string} page should be displayed")
-    public void page_should_be_displayed(String string) {
-        Assert.assertEquals(string,loginPage.getPageTitle());
-    }
+
 
     @When("users logs with wrong {string} or {string}")
     public void users_logs_with_wrong_or(String username, String password) {
@@ -36,9 +33,11 @@ public class LoginStepDef {
     }
 
     @Then("error message {string} should be displayed.")
-    public void error_message_should_be_displayed(String errorMessage) {
-       Assert.assertEquals(errorMessage,loginPage.getErrorMessage());
+    public void error_message_should_be_displayed(String string) {
+       Assert.assertEquals(string,loginPage.getErrorMessage());
     }
+
+
 
 
 
