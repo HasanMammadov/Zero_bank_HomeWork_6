@@ -14,8 +14,8 @@ public class LoginStepDef {
 
     @Given("authorized user is on the login page")
     public void authorized_user_is_on_the_login_page() {
-        String Url = ConfigurationReader.getProperty("Url");
-        Driver.getDriver().get(Url);
+       // String Url = ConfigurationReader.getProperty("Url");
+        Driver.getDriver().get(ConfigurationReader.getProperty("Url"));
 
     }
 
@@ -30,20 +30,22 @@ public class LoginStepDef {
         Assert.assertEquals(string,loginPage.getPageTitle());
     }
 
-
-
-
-
-    @When("user tries to login with invalid information")
-    public void user_tries_to_login_with_invalid_information() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @When("users logs with wrong {string} or {string}")
+    public void users_logs_with_wrong_or(String username, String password) {
+       loginPage.login(username,password);
     }
 
     @Then("error message {string} should be displayed.")
-    public void error_message_should_be_displayed(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void error_message_should_be_displayed(String errorMessage) {
+       Assert.assertEquals(errorMessage,loginPage.getErrorMessage());
     }
+
+
+
+
+
+
+
+
 
 }
