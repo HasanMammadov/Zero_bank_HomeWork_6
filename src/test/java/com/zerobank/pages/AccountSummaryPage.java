@@ -40,7 +40,20 @@ public class AccountSummaryPage extends BasePage{
 
 
        return BrowserUtilities.getTextFromWebElements(list);
+
    }
+
+    public List<String> accountSummaryPageAccountTypes(){
+        List<WebElement> list = new ArrayList<>();
+       list.add(cashAccounts);
+       list.add(investmentAccounts);
+       list.add(creditAccounts);
+       list.add(loanAccounts);
+
+
+        return BrowserUtilities.getTextFromWebElements(list);
+
+    }
 
 
 

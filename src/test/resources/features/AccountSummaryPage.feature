@@ -6,12 +6,10 @@ Feature: Account summary
     When user logs in with valid credentials
     Then "Zero - Account Summary" page should be displayed
 
-  Scenario Outline:Account summary page should have to following account types
+  Scenario: Account summary page should have to following account types
     Given authorized user is on the login page
     When user logs in with valid credentials
-    Then Account summary page should have to following account "<types>"
-    Examples:
-      | types               |
+    Then Account summary page should have to following account types
       | Cash Accounts       |
       | Investment Accounts |
       | Credit Accounts     |
