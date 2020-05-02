@@ -38,7 +38,7 @@
                             <useUnlimitedThreads>true</useUnlimitedThreads>
                             <includes>
                                 <!-- for  run class or classes-->
-                                <include>**/SmokeTestRunner*.java</include>
+                                <include>**/CukesRunner*.java</include>
                             </includes>
                             <testFailureIgnore>true</testFailureIgnore>
                         </configuration>
@@ -71,7 +71,7 @@
                     <useUnlimitedThreads>true</useUnlimitedThreads>
                     <includes>
                         <!-- for  run class or classes-->
-                        <include>**/CucumberRunner*.java</include>
+                        <include>**/CukesRunner*.java</include>
                     </includes>
                     <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
@@ -79,7 +79,7 @@
             <plugin>
                 <groupId>net.masterthought</groupId>
                 <artifactId>maven-cucumber-reporting</artifactId>
-                <version>5.0.0</version>
+                <version> 5.0.0</version>
                 <executions>
                     <execution>
                         <id>execution</id>

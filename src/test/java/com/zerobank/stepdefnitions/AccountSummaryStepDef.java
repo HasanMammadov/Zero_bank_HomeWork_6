@@ -14,14 +14,9 @@ public class AccountSummaryStepDef {
         Assert.assertEquals(string,accountSummaryPage.getpageTitle());
     }
 
-    @Then("Account summary page should have to following account {string}")
-    public void account_summary_page_should_have_to_following_account(String string) {
-        Assert.assertTrue(accountSummaryPage.getCashAccounts().isDisplayed());
-        Assert.assertTrue(accountSummaryPage.getCreditAccounts().isDisplayed());
-        Assert.assertTrue(accountSummaryPage.getLoanAccounts().isDisplayed());
-        Assert.assertTrue(accountSummaryPage.getInvestmentAccounts().isDisplayed());
-
-
+    @Then("Account summary page should have to following account types")
+    public void account_summary_page_should_have_to_following_account_types(List<String> dataTable) {
+        Assert.assertEquals(dataTable,accountSummaryPage.accountSummaryPageAccountTypes());
 
     }
 
